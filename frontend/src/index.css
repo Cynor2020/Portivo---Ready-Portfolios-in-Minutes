@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .profile-form input,
+  .profile-form textarea,
+  .profile-form select {
+    @apply w-full px-4 py-2 rounded-lg border border-zinc-700 bg-zinc-900 text-text-primary focus:outline-none focus:ring-2 focus:ring-purple-main focus:border-purple-main/80;
+  }
+
+  .profile-form input::placeholder,
+  .profile-form textarea::placeholder {
+    @apply text-zinc-500;
+  }
+
+  .profile-tabs-scroll {
+    scrollbar-width: none;
+  }
+
+  .profile-tabs-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #18181b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Toast animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Force white text inside profile forms */
+.profile-form {
+  color: #ffffff;
+}
+
+.profile-form h1,
+.profile-form h2,
+.profile-form h3,
+.profile-form h4,
+.profile-form h5,
+.profile-form h6,
+.profile-form label,
+.profile-form span,
+.profile-form p {
+  color: #ffffff;
+}
+
+/* Override text colors in profile forms */
+.profile-form [class*="text-gray-"],
+.profile-form [class*="text-zinc-"] {
+  color: #ffffff !important;
+}
+
