@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './routes/ProtectedRoute';
-import TopNav from './components/TopNav';
+import DashboardLayout from './components/DashboardLayout';
 
 // Pages
 import Login from './pages/Login';
@@ -21,13 +21,14 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          {/* Fixed private routes - must come first */}
+          {/* Protected routes with dashboard layout */}
           <Route
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <TopNav />
-                <Dashboard />
+                <DashboardLayout>
+                  <Dashboard />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />
@@ -35,8 +36,9 @@ function App() {
             path="/profile"
             element={
               <ProtectedRoute>
-                <TopNav />
-                <Profile />
+                <DashboardLayout>
+                  <Profile />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />
@@ -44,8 +46,9 @@ function App() {
             path="/settings"
             element={
               <ProtectedRoute>
-                <TopNav />
-                <Settings />
+                <DashboardLayout>
+                  <Settings />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />
@@ -53,8 +56,9 @@ function App() {
             path="/templates"
             element={
               <ProtectedRoute>
-                <TopNav />
-                <Templates />
+                <DashboardLayout>
+                  <Templates />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />
@@ -62,8 +66,9 @@ function App() {
             path="/ai-analysis"
             element={
               <ProtectedRoute>
-                <TopNav />
-                <AIAnalysis />
+                <DashboardLayout>
+                  <AIAnalysis />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />
@@ -71,8 +76,9 @@ function App() {
             path="/subscription"
             element={
               <ProtectedRoute>
-                <TopNav />
-                <Subscription />
+                <DashboardLayout>
+                  <Subscription />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />
@@ -80,8 +86,9 @@ function App() {
             path="/support"
             element={
               <ProtectedRoute>
-                <TopNav />
-                <Support />
+                <DashboardLayout>
+                  <Support />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />
@@ -89,8 +96,9 @@ function App() {
             path="/my-account"
             element={
               <ProtectedRoute>
-                <TopNav />
-                <MyAccount />
+                <DashboardLayout>
+                  <MyAccount />
+                </DashboardLayout>
               </ProtectedRoute>
             }
           />

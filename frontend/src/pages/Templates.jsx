@@ -96,8 +96,8 @@ const Templates = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background p-6 lg:pl-72">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto p-6">
         <h1 className="text-3xl font-bold text-text-primary mb-2">Choose Your Template</h1>
         <p className="text-text-secondary mb-8">Select a design that matches your style</p>
 

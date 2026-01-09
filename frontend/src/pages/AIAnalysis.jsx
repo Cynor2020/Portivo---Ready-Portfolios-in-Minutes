@@ -52,8 +52,8 @@ const AIAnalysis = () => {
 
   if (!hasProAccess) {
     return (
-      <div className="min-h-screen bg-background p-6 lg:pl-72">
-        <div className="max-w-6xl mx-auto">
+      <div className="min-h-screen bg-background">
+        <div className="max-w-6xl mx-auto p-6">
           <h1 className="text-3xl font-bold text-text-primary mb-8">AI Analysis</h1>
           <LockedFeature 
             title="Unlock AI Analysis" 
@@ -74,15 +74,15 @@ const AIAnalysis = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background p-6 lg:pl-72 flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-text-primary text-sm">Loading analytics…</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background p-6 lg:pl-72">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-background">
+      <div className="max-w-6xl mx-auto p-6">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-text-primary">AI Analysis</h1>
           <p className="mt-2 text-sm text-text-secondary max-w-2xl">

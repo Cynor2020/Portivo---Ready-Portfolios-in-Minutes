@@ -10,14 +10,7 @@ const profileSchema = new mongoose.Schema(
     },
     portfolioType: {
       type: String,
-      enum: [
-        'Developer',
-        'UI/UX Designer',
-        'Graphic Designer',
-        'Digital Marketer',
-        'Content Writer',
-        'Photographer',
-      ],
+      enum: ['Developer', 'Graphic Designer', 'Photographer'],
       default: 'Developer',
     },
     identity: {
@@ -240,72 +233,14 @@ const profileSchema = new mongoose.Schema(
       },
     ],
     styleSpecialties: { type: [String], default: [] },
-    // UI/UX Designer fields
-    about: {
-      summary: { type: String, default: '' },
-      yearsOfExperience: { type: String, default: '' },
-      currentStatus: { type: String, default: '' },
-      designPhilosophy: { type: [String], default: [] },
-      industries: { type: [String], default: [] },
-      workPreference: { type: [String], default: [] },
-    },
-    designProcess: [
-      {
-        title: { type: String },
-        description: { type: String },
-        icon: { type: String },
-      },
-    ],
+    // Graphic Designer fields
     tools: [
       {
         name: { type: String },
-        proficiency: { type: String }, // Beginner, Intermediate, Advanced, Expert
+        proficiency: { type: String },
         years: { type: Number },
       },
     ],
-    caseStudies: [
-      {
-        title: { type: String },
-        client: { type: String },
-        projectType: { type: String },
-        duration: { type: String },
-        team: { type: String },
-        role: { type: String },
-        problem: { type: String },
-        userResearch: { type: String },
-        personaImages: [{ type: String }],
-        userFlows: [{ type: String }],
-        journeyMaps: [{ type: String }],
-        wireframes: [{ type: String }],
-        highFiDesigns: [{ type: String }],
-        prototypeLink: { type: String },
-        usabilityTesting: { type: String },
-        keyDecisions: { type: String },
-        tradeoffs: { type: String },
-        outcomes: { type: String },
-        metrics: { type: String },
-        beforeAfterImages: [{ type: String }],
-        liveLink: { type: String },
-        lessonsLearned: { type: String },
-        images: [{ type: String }], // General images
-      },
-    ],
-    visualPortfolio: [
-      {
-        image: { type: String },
-        title: { type: String },
-        caption: { type: String },
-        caseStudyLink: { type: String },
-      },
-    ],
-    designSystems: [
-      {
-        name: { type: String },
-        link: { type: String },
-        description: { type: String },
-      },
-    ],
-    // Graphic Designer fields
     visualPortfolio: [
       {
         image: { type: String },
@@ -337,153 +272,6 @@ const profileSchema = new mongoose.Schema(
       },
     ],
     specialties: { type: [String], default: [] },
-    // Content Writer fields
-    writingSamples: [
-      {
-        title: { type: String },
-        excerpt: { type: String },
-        link: { type: String },
-        category: { type: String },
-        date: { type: String },
-        tags: [{ type: String }],
-      },
-    ],
-    topics: { type: [String], default: [] },
-    seoSkills: [
-      {
-        tool: { type: String },
-        keywords: [{ type: String }],
-      },
-    ],
-    ghostwritingExp: { type: String, default: '' },
-    // Digital Marketer fields
-    campaigns: [
-      {
-        name: { type: String },
-        platform: { type: String },
-        results: { type: String },
-        images: [{ type: String }],
-        date: { type: String },
-        link: { type: String },
-        description: { type: String },
-      },
-    ],
-    metrics: {
-      roi: String,
-      ctr: String,
-      impressions: String,
-      conversions: String,
-      other: String,
-    },
-    contentStrategy: { type: String, default: '' },
-    socialMediaGrowth: {
-      followers: String,
-      engagement: String,
-      platforms: [String],
-    },
-    // Architect fields
-    projectGallery: [
-      {
-        image: { type: String },
-        title: { type: String },
-        description: { type: String },
-        type: { type: String }, // Blueprint, Render, Photo
-      },
-    ],
-    builtWorks: [
-      {
-        name: { type: String },
-        location: { type: String },
-        year: { type: String },
-        image: { type: String },
-        description: { type: String },
-      },
-    ],
-    sustainabilityFocus: { type: String, default: '' },
-    professionalLicenses: [
-      {
-        name: { type: String },
-        issuer: { type: String },
-        date: { type: String },
-        number: { type: String },
-      },
-    ],
-    // Musician/Artist fields
-    audioVideoPortfolio: [
-      {
-        title: { type: String },
-        type: { type: String }, // audio or video
-        embedUrl: { type: String },
-        description: { type: String },
-        date: { type: String },
-      },
-    ],
-    releases: [
-      {
-        title: { type: String },
-        type: { type: String }, // album, single, EP
-        date: { type: String },
-        link: { type: String },
-        image: { type: String },
-        description: { type: String },
-      },
-    ],
-    performances: [
-      {
-        venue: { type: String },
-        date: { type: String },
-        location: { type: String },
-        description: { type: String },
-      },
-    ],
-    instruments: { type: [String], default: [] },
-    collaborations: [
-      {
-        artist: String,
-        project: String,
-        date: String,
-        link: String,
-      },
-    ],
-    // Teacher/Educator fields
-    coursesTaught: [
-      {
-        name: String,
-        institution: String,
-        level: String,
-        description: String,
-        platform: String,
-      },
-    ],
-    studentsImpact: {
-      stats: String,
-      testimonials: [String],
-    },
-    subjects: { type: [String], default: [] },
-    institutions: [
-      {
-        name: String,
-        role: String,
-        period: String,
-        description: String,
-      },
-    ],
-    teachingMaterials: [
-      {
-        title: String,
-        type: String,
-        link: String,
-        description: String,
-      },
-    ],
-    // Custom portfolio type - dynamic fields
-    customFields: [
-      {
-        sectionName: String,
-        fieldType: String, // text, textarea, list, upload
-        value: mongoose.Schema.Types.Mixed,
-      },
-    ],
     // Deployment and activation
     subdomain: {
       type: String,

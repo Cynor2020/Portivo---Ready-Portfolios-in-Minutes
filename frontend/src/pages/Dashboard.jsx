@@ -49,13 +49,13 @@ const Dashboard = () => {
   const strengthStats = getProfileStrength();
 
   return (
-    <div className="min-h-screen bg-background p-6 lg:pl-72">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-text-primary mb-8">
+    <div className="min-h-screen bg-background">
+      <div className="max-w-7xl mx-auto p-4 md:p-6 lg:p-8">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-6 md:mb-8">
           Welcome back, {user?.name}
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
           <ProfileStrengthCard
             stats={strengthStats}
           />
@@ -65,7 +65,7 @@ const Dashboard = () => {
           />
         </div>
 
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
           <MioAICard />
         </div>
 

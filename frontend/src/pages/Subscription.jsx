@@ -100,7 +100,7 @@ const Subscription = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background p-6 lg:pl-72">
+    <div className="min-h-screen bg-background p-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center lg:text-left">
           <h1 className="text-4xl font-bold text-text-primary mb-4">Subscription Plans</h1>

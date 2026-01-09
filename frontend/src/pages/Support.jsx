@@ -62,7 +62,7 @@ const Support = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-6 lg:pl-72">
+    <div className="min-h-screen bg-background p-6">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-text-primary mb-8">Support Center</h1>
         
